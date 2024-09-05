@@ -26,7 +26,7 @@ app.post('/add-task', (req, res) => {
     if (taskText) {
         tasks.push(taskText);
     }
-    res.redirect('/');
+    res.redirect('/'); // Redirect to home page to avoid resubmitting form
 });
 
 app.post('/remove-task', (req, res) => {
@@ -34,7 +34,7 @@ app.post('/remove-task', (req, res) => {
     if (!isNaN(taskIndex) && taskIndex >= 0 && taskIndex < tasks.length) {
         tasks.splice(taskIndex, 1);
     }
-    res.redirect('/');
+    res.redirect('/'); // Redirect to home page to avoid resubmitting form
 });
 
 app.listen(port, () => {

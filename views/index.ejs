@@ -12,7 +12,7 @@
   <div id="app">
     <h1>To-Do List</h1>
     <form action="/add-task" method="POST">
-      <input type="text" name="taskText" placeholder="Add a new task" required>
+      <input type="text" name="taskText" placeholder="Add a new task" required autofocus>
       <button type="submit">Add Task</button>
     </form>
     <ul>
@@ -20,7 +20,8 @@
         <li>
           <%= task %>
             <form action="/remove-task" method="POST" style="display:inline;">
-              <input type="hidden" name="taskIndex" value="<%= index %>">
+              <input type="hidden" autofocus name="taskIndex" value="<%= index %>">
+              <input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;" tabindex="-1" />
               <button type="submit">Remove</button>
             </form>
         </li>
